@@ -1,0 +1,207 @@
+/* Общие стили */
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(90deg, #eecdf6, #d7d5d5);
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+}
+
+/* Стили основного контента */
+main {
+    width: 100%;
+    display: grid;
+    grid-gap: 20px;
+    justify-items: center;
+    padding: 20px;
+}
+
+.welcome-section,
+.pricing-section,
+.recommendations-section {
+    border-radius: 10px;
+    width: 80%;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+footer {
+    width: 100%;
+    padding: 20px;
+    color: #fff;
+    background-color: #383737;
+    box-shadow: 0 0 10px rgb(245, 123, 123);
+    text-align: center;
+}
+
+/* Стиль изображения */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Медиа-запросы */
+/* Для мобильных телефонов с разрешением 375x812px (IPhone X) */
+@media only screen and (max-width: 375px) {
+    .welcome-section,
+    .pricing-section,
+    .recommendations-section {
+        width: 95%;
+    }
+}
+
+/* Для планшетов с разрешением 1366x1024px (IPad Pro) */
+@media only screen and (min-width: 768px) {
+    .welcome-section,
+    .pricing-section,
+    .recommendations-section {
+        width: 90%;
+    }
+}
+
+/* Для компьютеров с шириной экрана от 1600px */
+@media only screen and (min-width: 1600px) {
+    .welcome-section,
+    .pricing-section,
+    .recommendations-section {
+        width: 70%;
+    }
+}
+
+header {
+    width: 100%;
+    padding: 20px;
+    background-color: #383737;
+    box-shadow: 0 0 10px rgb(245, 123, 123);
+    display: flex;
+    justify-content: center;
+    z-index:100;
+    align-items: center;
+}
+
+header .navbar a {
+    color: #b8b8ff;
+    font-size: 20px;
+    margin-left: 30px;
+    transition: 0.5s;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-around;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav a {
+    color: #333;
+    text-decoration: none;
+    padding: 5px;
+}
+
+nav a:hover {
+    background-color: #ddd;
+}
+
+header input{
+    display: none;
+}
+
+header label{
+    font-size: 1px;
+    cursor: pointer;
+    visibility: hidden;
+    opacity: 0;
+}
+
+@media (max-width: 1200px) {
+    header label{
+        visibility: visible;
+        opacity: 1;
+
+
+    }
+    header .navbar{
+        position: absolute;
+        top: 10%;
+        left: 0;
+        width: 100%;
+        background: #333;
+        padding: 1rem 2rem;
+        border-top: .1rem solid rgba(0,0,0,0.1);
+        transform-origin: top;
+        transform: scale(0);
+        opacity: 0;
+    }
+    header .navbar ul{
+        display: block;
+        margin: auto;
+        font-size: 1.2rem;
+    }
+    header input:checked ~ .navbar{
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+    body {
+        font-size:30px;
+        padding: 0;
+    }
+    header .navbar ul{
+        display: block;
+        margin: auto;
+        font-size: 1.6rem;
+    }
+
+    header .navbar{
+        position: absolute;
+        top: 5%;
+        left: 0;
+        width: 100%;
+        background: #333;
+        padding: 1rem 2rem;
+        border-top: .1rem solid rgba(0,0,0,0.1);
+        transform-origin: top;
+        transform: scale(0);
+        opacity: 0;
+    }
+}
+
+.pulse
+{
+    animation: pulse 50s infinite;
+    transform: scale(1);
+}
+
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(0.8);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.director-img {
+    transition: filter 0.3s ease;
+}
+
+.director-img:hover {
+    filter: blur(5px);
+}

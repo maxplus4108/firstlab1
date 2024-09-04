@@ -1,0 +1,178 @@
+/* Базовые стили */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+#library-cont {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.book-item {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.book-item h1 {
+    margin-top: 0;
+}
+
+.filter-form {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.filter {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.filter-item {
+    flex: 1 1 200px;
+    margin-right: 10px;
+}
+
+.filter-item:last-child {
+    margin-right: 0;
+}
+
+.filter-item input[type="text"] {
+    width: calc(100% - 10px);
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.filter-item input[type="button"] {
+    width: 100%;
+    padding: 8px;
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.filter-item input[type="button"]:hover {
+    background-color: #45a049;
+}
+
+/* Добавляем стили для модального окна */
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    max-width: 80%;
+    max-height: 80%;
+    overflow-y: auto;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    display: none; /* По умолчанию скрываем модальное окно */
+}
+
+.modal-content {
+    margin-bottom: 20px;
+}
+
+/* Изменяем размер модального окна */
+/* Изменяем размер модального окна */
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    width: 80%; /* Изменяем ширину модального окна */
+    height: 80%; /* Изменяем высоту модального окна */
+    max-width: 800px; /* Ограничиваем максимальную ширину */
+    max-height: 600px; /* Ограничиваем максимальную высоту */
+    overflow-y: auto;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    display: none; /* По умолчанию скрываем модальное окно */
+}
+
+/* Стили для контейнера с кнопками */
+.modal-buttons {
+    margin-top: 400px;
+    text-align: center;
+}
+
+.modal-buttons button {
+    margin-left: 30px;
+}
+
+
+.modal button:hover {
+    background-color: #45a049;
+}
+
+
+/* Добавляем CSS-анимации для перелистывания страницы */
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInFromRight {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideOutToLeft {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes slideOutToRight {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+.flip-in-hor-front {
+    animation: slideInFromRight 0.5s ease-in-out;
+}
+
+.flip-in-hor-back {
+    animation: slideInFromLeft 0.5s ease-in-out;
+}
+
+.flip-out-hor-front {
+    animation: slideOutToRight 0.5s ease-in-out;
+}
+
+.flip-out-hor-back {
+    animation: slideOutToLeft 0.5s ease-in-out;
+}

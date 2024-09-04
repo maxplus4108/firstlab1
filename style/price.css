@@ -1,0 +1,209 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(90deg, #eecdf6, #d7d5d5);
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+}
+
+header {
+    width: 100%;
+    padding: 20px;
+    background-color: #383737;
+    box-shadow: 0 0 10px rgb(245, 123, 123);
+    display: flex;
+    justify-content: center;
+    z-index:100;
+    align-items: center;
+}
+
+header .navbar a {
+    color: #b8b8ff;
+    font-size: 20px;
+    margin-left: 30px;
+    transition: 0.5s;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-around;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav a {
+    color: #333;
+    text-decoration: none;
+    padding: 5px;
+}
+
+nav a:hover {
+    background-color: #ddd;
+}
+
+header input{
+    display: none;
+}
+
+header label{
+    font-size: 1px;
+    cursor: pointer;
+    visibility: hidden;
+    opacity: 0;
+}
+
+@media (max-width: 1200px) {
+    header label{
+        visibility: visible;
+        opacity: 1;
+
+
+    }
+    header .navbar{
+        position: absolute;
+        top: 10%;
+        left: 0;
+        width: 100%;
+        background: #333;
+        padding: 1rem 2rem;
+        border-top: .1rem solid rgba(0,0,0,0.1);
+        transform-origin: top;
+        transform: scale(0);
+        opacity: 0;
+    }
+    header .navbar ul{
+        display: block;
+        margin: auto;
+        font-size: 1.2rem;
+    }
+    header input:checked ~ .navbar{
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+    body {
+        font-size:30px;
+        padding: 0;
+    }
+    header .navbar ul{
+        display: block;
+        margin: auto;
+        font-size: 1.6rem;
+    }
+
+    header .navbar{
+        position: absolute;
+        top: 5%;
+        left: 0;
+        width: 100%;
+        background: #333;
+        padding: 1rem 2rem;
+        border-top: .1rem solid rgba(0,0,0,0.1);
+        transform-origin: top;
+        transform: scale(0);
+        opacity: 0;
+    }
+
+    header .navbar a {
+        font-size: 30px; /* или любой другой размер, который вам нужен */
+    }
+
+    main {
+        grid-template-columns: 1fr; /* изменить это значение */
+    }
+    /*main img{
+        width: 20%;
+        height: auto;
+    }*/
+
+}
+
+main h2{
+    background: linear-gradient(-45deg, #10ff00, #6355a4,
+    #ff0072, #e89a3e);
+    background-size: 300%;
+    letter-spacing: -2px;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: animated_text 3s ease-in-out infinite;
+}
+
+
+
+
+@keyframes animated_text {
+    0% {
+        background-position: 0 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0 50%;
+    }
+}
+
+
+/* Стили для основного контейнера вкладки "Прайс-лист" */
+main {
+    /* Прозрачный фон с белым цветом и 80% непрозрачностью */
+    background-color: rgba(255, 255, 255, 0.8);
+
+    /* Отступы вокруг контента внутри контейнера */
+    padding: 20px;
+    /* Отступы вокруг контейнера */
+    margin: 20px;
+}
+
+/* Стили для таблицы */
+table {
+    /* Ширина таблицы равняется 100% ширины родительского элемента */
+    width: 100%;
+    /* Убираем двойные границы между ячейками таблицы */
+    border-collapse: collapse;
+    /* Градиентная обводка вокруг таблицы */
+    border: .8rem solid transparent;
+    border-image: linear-gradient(to right, #ff6f61, #ffe66d) 1;
+}
+
+/* Стили для ячеек таблицы */
+th, td {
+    /* Отступы вокруг контента внутри ячейки */
+    padding: 10px;
+    /* Выравнивание текста по левому краю */
+    text-align: left;
+    /* Граница вокруг ячейки */
+    border: 1px solid #ddd;
+}
+
+/* Стили для заголовков таблицы */
+th {
+    /* Цвет фона заголовков таблицы */
+    background-color: #f2f2f2;
+}
+
+/* Стили для четных строк таблицы */
+tr:nth-child(even) {
+    /* Цвет фона четных строк таблицы */
+    background-color: #f2f2f2;
+}
+
+footer {
+    width: 100%;
+    padding: 20px;
+    color: #fff;
+    background-color: #383737;
+    box-shadow: 0 0 10px rgb(245, 123, 123);
+    text-align: center;
+    margin-top:auto;
+}

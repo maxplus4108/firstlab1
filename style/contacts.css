@@ -1,0 +1,210 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+
+html, body {
+    height: 100%;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(90deg, #eecdf6, #d7d5d5);
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+}
+
+/* Стили основного контента */
+/*main {*/
+/*    width: 100%;*/
+/*    display: grid;*/
+/*    grid-gap: 20px;*/
+/*    justify-items: center;*/
+/*    padding: 20px;*/
+/*}*/
+
+footer {
+    width: 100%;
+    padding: 20px;
+    color: #fff;
+    background-color: #383737;
+    box-shadow: 0 0 10px rgb(245, 123, 123);
+    text-align: center;
+    margin-top:auto;
+}
+
+
+header {
+    width: 100%;
+    padding: 20px;
+    background-color: #383737;
+    box-shadow: 0 0 10px rgb(245, 123, 123);
+    display: flex;
+    justify-content: center;
+    z-index:100;
+    align-items: center;
+}
+
+header .navbar a {
+    color: #b8b8ff;
+    font-size: 20px;
+    margin-left: 30px;
+    transition: 0.5s;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-around;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav a {
+    color: #333;
+    text-decoration: none;
+    padding: 5px;
+}
+
+nav a:hover {
+    background-color: #ddd;
+}
+
+header input{
+    display: none;
+}
+
+header label{
+    font-size: 1px;
+    cursor: pointer;
+    visibility: hidden;
+    opacity: 0;
+}
+
+@media (max-width: 1200px) {
+    header label{
+        visibility: visible;
+        opacity: 1;
+
+
+    }
+    header .navbar{
+        position: absolute;
+        top: 10%;
+        left: 0;
+        width: 100%;
+        background: #333;
+        padding: 1rem 2rem;
+        border-top: .1rem solid rgba(0,0,0,0.1);
+        transform-origin: top;
+        transform: scale(0);
+        opacity: 0;
+    }
+    header .navbar ul{
+        display: block;
+        margin: auto;
+        font-size: 1.2rem;
+    }
+    header input:checked ~ .navbar{
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+    body {
+        font-size: 30px;
+        padding: 0;
+    }
+
+    header .navbar ul {
+        display: block;
+        margin: auto;
+        font-size: 1.6rem;
+    }
+
+    header .navbar {
+        position: absolute;
+        top: 5%;
+        left: 0;
+        width: 100%;
+        background: #333;
+        padding: 1rem 2rem;
+        border-top: .1rem solid rgba(0, 0, 0, 0.1);
+        transform-origin: top;
+        transform: scale(0);
+        opacity: 0;
+    }
+
+    header .navbar a {
+        font-size: 30px; /* или любой другой размер, который вам нужен */
+    }
+
+    main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .profile-pic {
+        margin: 0 0 10px 0;
+    }
+
+    .profile-pic img {
+        width: 100%;
+        max-width: 200px;
+        height: auto;
+    }
+}
+
+
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.profile-pic {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+}
+
+@media (max-width: 600px) {
+    main {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .profile-pic {
+        margin: 0 0 10px 0;
+    }
+
+    .profile-pic img {
+        width: 100%;
+        max-width: 150px;
+        height: auto;
+    }
+}
+
+
+h1{
+    font-style: oblique;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    text-align: center;
+
+}
+
+
+.profile-pic img {
+    transition: filter 0.3s ease;
+}
+
+.profile-pic img:hover {
+    filter: blur(2px);
+}
+

@@ -1,0 +1,199 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+
+html, body {
+    height: 100%;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(90deg, #eecdf6, #d7d5d5);
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+}
+
+/* Стили основного контента */
+/*main {*/
+/*    width: 100%;*/
+/*    display: grid;*/
+/*    grid-gap: 20px;*/
+/*    justify-items: center;*/
+/*    padding: 20px;*/
+/*}*/
+
+footer {
+    width: 100%;
+    padding: 20px;
+    color: #fff;
+    background-color: #383737;
+    box-shadow: 0 0 10px rgb(245, 123, 123);
+    text-align: center;
+    margin-top:auto;
+}
+
+
+header {
+    width: 100%;
+    padding: 20px;
+    background-color: #383737;
+    box-shadow: 0 0 10px rgb(245, 123, 123);
+    display: flex;
+    justify-content: center;
+    z-index:100;
+    align-items: center;
+}
+
+header .navbar a {
+    color: #b8b8ff;
+    font-size: 20px;
+    margin-left: 30px;
+    transition: 0.5s;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-around;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav a {
+    color: #333;
+    text-decoration: none;
+    padding: 5px;
+}
+
+nav a:hover {
+    background-color: #ddd;
+}
+
+header input{
+    display: none;
+}
+
+header label{
+    font-size: 1px;
+    cursor: pointer;
+    visibility: hidden;
+    opacity: 0;
+}
+
+@media (max-width: 1200px) {
+    header label{
+        visibility: visible;
+        opacity: 1;
+
+
+    }
+    header .navbar{
+        position: absolute;
+        top: 10%;
+        left: 0;
+        width: 100%;
+        background: #333;
+        padding: 1rem 2rem;
+        border-top: .1rem solid rgba(0,0,0,0.1);
+        transform-origin: top;
+        transform: scale(0);
+        opacity: 0;
+    }
+    header .navbar ul{
+        display: block;
+        margin: auto;
+        font-size: 1.2rem;
+    }
+    header input:checked ~ .navbar{
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+    body {
+        font-size:30px;
+        padding: 0;
+    }
+    header .navbar ul{
+        display: block;
+        margin: auto;
+        font-size: 1.6rem;
+    }
+
+    header .navbar{
+        position: absolute;
+        top: 5%;
+        left: 0;
+        width: 100%;
+        background: #333;
+        padding: 1rem 2rem;
+        border-top: .1rem solid rgba(0,0,0,0.1);
+        transform-origin: top;
+        transform: scale(0);
+        opacity: 0;
+    }
+
+    header .navbar a {
+        font-size: 30px; /* или любой другой размер, который вам нужен */
+    }
+
+    main {
+        grid-template-columns: 1fr; /* изменить это значение */
+    }
+    /*main img{*/
+    /*    width: 20%;*/
+    /*    height: auto;*/
+    /*}*/
+
+}
+
+main {
+    display: grid;
+    grid-template-columns: 1fr; /* изменить это значение */
+    grid-gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+article {
+    border: 1px solid #fff;
+    border-radius: 10px 10px 10px 0;
+    padding: 1px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease-out;
+}
+
+
+article:hover {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+
+}
+
+main h1 {
+    padding-top: 50px;
+}
+
+
+@media (max-width: 768px) {
+    main {
+        grid-template-columns: 1fr;
+    }
+
+    article {
+        margin-bottom: 20px;
+    }
+
+    header .navbar {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    header .navbar a {
+        margin-left: 0;
+    }
+}
